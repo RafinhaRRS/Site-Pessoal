@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Rafael - Meu site pessoal</title>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  background: #0f172a;
+  color: white;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background: #020617;
+  position: fixed;
+  padding-top: 40px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 18px 25px;
+  color: #cbd5f5;
+  text-decoration: none;
+  font-size: 18px;
+  border-left: 4px solid transparent;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background: #1e293b;
+  color: white;
+  border-left: 4px solid #38bdf8;
+}
+
+/* CONTEÚDO */
+.main {
+  margin-left: 240px;
+  width: 100%;
+}
+
+/* SEÇÕES */
+section {
+  min-height: 100vh;
+  padding: 80px 100px;
+  display: flex;
+  align-items: center;
+}
+
+/* FUNDOS */
+#sobre { background: linear-gradient(45deg,#0f172a,#1e293b); }
+#experiencia { background: linear-gradient(45deg,#1e293b,#0ea5e9); }
+#projetos { background: linear-gradient(45deg,#1e293b,#0ea5e9); }
+#educacao { background: linear-gradient(45deg,#0f172a,#1e293b); }
+#contato { background: linear-gradient(45deg,#1e293b,#0ea5e9); }
+
+/* SOBRE */
+.sobre-container {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+/* FOTO */
+.foto-wrapper {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: float 4s ease-in-out infinite;
+}
+
+.foto-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: conic-gradient(#38bdf8,#9333ea,#0ea5e9,#38bdf8);
+  animation: rotate 6s linear infinite;
+  z-index: -1;
+}
+
+.foto-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: #0f172a;
+  z-index: -1;
+}
+
+.foto img {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: 0.4s;
+  box-shadow: 0 0 30px rgba(56,189,248,0.6);
+}
+
+.foto img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 60px rgba(56,189,248,1);
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* TEXTO */
+.texto {
+  max-width: 500px;
+}
+
+.texto h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.texto p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+span { color:#38bdf8; }
+
+/* CARDS */
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  margin-top: 20px;
+  border-radius: 12px;
+  width: 350px;
+}
+
+.grid {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+/* PARTICLES */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* MATRIX */
+#matrix {
+  position: fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+  <a href="#sobre">Sobre</a>
+  <a href="#experiencia">Experiência</a>
+  <a href="#projetos">Projetos</a>
+  <a href="#educacao">Educação</a>
+  <a href="#contato">Contato</a>
+</div>
+
+<div class="main">
+
+<div id="particles-js"></div>
+
+<!-- SOBRE COM FOTO -->
+<section id="sobre">
+  <div class="sobre-container">
+
+    <div class="foto">
+      <div class="foto-wrapper">
+        <img src="sua-foto.png.webp" alt="Minha foto">
+      </div>
+    </div>
+
+    <div class="texto">
+      <h1>Olá, eu sou <span>Rafael</span></h1>
+      <p id="typing"></p>
+      <p>Academico em Ciência da Computação - ATITUS EDUCAÇÃO</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="experiencia">
+  <div>
+    <h2>Um pouco sobre mim</h2>
+    <div class="grid">
+      <div class="card">Meu nome é Rafael Rech da Silva tenho 19 anos, sou originalmente de Marau-RS e atuo na área de Ciência da Computação e Tecnologia da Informação.
+
+ </div>
+      <div class="card">Sobre minha graduação, estou no 3º semestre de Ciência da Computação pela Atitus Educação, comecei minha trajetória profissional na area a pouco tempo na parte de infra e estou aperfeisuando ainda mais para um futuro na área de tecnologia.</div>
+    </div>
+  </div>
+</section>
+
+<section id="projetos">
+  <div>
+    <h2>Projetos</h2>
+    <div class="card">Este é meu primeiro projeto em HTML, onde desenvolvi um site pessoal para apresentar minhas habilidades e experiências.</div>
+  </div>
+</section>
+
+<section id="educacao">
+  <canvas id="matrix"></canvas>
+  <div>
+    <h2>Educação</h2>
+    <div class="card"> Fiz meu ensino médio na Escola Anchieta</div>
+    <div class="card">Atualmente sou estudante de Ciência da Computação pela Atitus Educação</div>
+  </div>
+</section>
+
+<section id="contato">
+  <div>
+    <h2>Contato</h2>
+    <div class="card">Você pode me encontrar nas redes sociais ou me enviar um e-mail.</div>
+    <div class="card">Email: rafaelrec72@gmail.com.      Instagram: @rch_rafa</div>
+  </div>
+</section>
+
+</div>
+
+<script>
+const text = "Desenvolvedor | Criador | Gamer";
+let i = 0;
+function typing(){
+  const el=document.getElementById("typing");
+  if(!el)return;
+  if(i<text.length){
+    el.innerHTML+=text.charAt(i);
+    i++;
+    setTimeout(typing,60);
+  }
+}
+typing();
+
+particlesJS("particles-js",{particles:{number:{value:80},size:{value:3},move:{speed:2}}});
+
+const canvas=document.getElementById("matrix");
+if(canvas){
+  const ctx=canvas.getContext("2d");
+  canvas.width=window.innerWidth;
+  canvas.height=window.innerHeight;
+  const letters="01";
+  const fontSize=14;
+  const columns=canvas.width/fontSize;
+  const drops=Array.from({length:columns}).fill(1);
+  function draw(){
+    ctx.fillStyle="rgba(0,0,0,0.05)";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle="#0f0";
+    ctx.font=fontSize+"px monospace";
+    drops.forEach((y,i)=>{
+      const text=letters[Math.floor(Math.random()*letters.length)];
+      ctx.fillText(text,i*fontSize,y*fontSize);
+      if(y*fontSize>canvas.height&&Math.random()>0.975) drops[i]=0;
+      drops[i]++;
+    });
+  }
+  setInterval(draw,33);
+}
+</script>
+
+</body>
+</html>

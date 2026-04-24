@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* LOADER */
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 9999;
+}
+
+/* TRANSIÇÃO */
+.fade {
+  animation: fadeIn 1s;
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* NAV */
+header {
+  background: #020617;
+  padding: 15px;
+}
+header a {
+  margin: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+/* FUNDOS */
+.home { background: #0f172a; }
+.projetos { background: linear-gradient(45deg,#0ea5e9,#9333ea); }
+.educacao { background: black; }
+
+/* HERO */
+.hero {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+span { color: #38bdf8; }
+
+/* CARDS */
+.card {
+  background: rgba(255,255,255,0.1);
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  width: 300px;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* IMAGEM */
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* MATRIX */
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+/* FOTO PROFISSIONAL INSANA */
+
+.foto-wrapper {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* BORDA NEON GIRANDO */
+.foto-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #38bdf8,
+    #9333ea,
+    #0ea5e9,
+    #38bdf8
+  );
+  animation: rotate 6s linear infinite;
+  z-index: -1;
+}
+
+/* CAMADA INTERNA */
+.foto-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: #0f172a;
+  z-index: -1;
+}
+
+/* IMAGEM */
+.foto img {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: 0.4s;
+  box-shadow: 0 0 30px rgba(56,189,248,0.6);
+}
+
+/* HOVER */
+.foto img:hover {
+  transform: scale(1.08) rotate(1deg);
+  box-shadow: 0 0 60px rgba(56,189,248,1);
+}
+
+/* ANIMAÇÕES */
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
