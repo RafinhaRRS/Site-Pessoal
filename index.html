@@ -19,6 +19,7 @@ body {
   display: flex;
   background: #0f172a;
   color: white;
+  font-family: Arial, sans-serif;
 }
 
 /* SIDEBAR */
@@ -118,8 +119,8 @@ section {
 }
 
 .foto img:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 60px rgba(56,189,248,1);
+  transform: none;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.1);
 }
 
 @keyframes rotate {
@@ -137,38 +138,83 @@ section {
 }
 
 .texto h1 {
-  font-size: 3em;
+  font-size: 2.7em;
   margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .texto p {
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
-span { color:#38bdf8; }
+span { color: #38bdf8; }
 
 /* CARDS */
 .card {
   background: rgba(255,255,255,0.1);
-  padding: 25px;
+  color: white;
+  padding: 28px;
   margin-top: 20px;
   border-radius: 12px;
-  width: 350px;
+  flex: 1 1 45%;
+  min-width: 320px;
+  max-width: 520px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.card p {
+  line-height: 1.85;
+}
+
+h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: white;
 }
 
 .grid {
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-h2 {
-  font-size: 2.5em;
-  margin-bottom: 30px;
+.contato-cards {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
-/* PARTICLES */
+.contato-card {
+  flex: 1 1 45%;
+  min-width: 320px;
+}
+
+.contato-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.instagram-button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 22px;
+  border: 1px solid #38bdf8;
+  border-radius: 999px;
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.instagram-button:hover {
+  background: rgba(56,189,248,0.12);
+}
+
 #particles-js {
   position: fixed;
   width: 100%;
@@ -251,7 +297,16 @@ h2 {
   <div>
     <h2>Contato</h2>
     <div class="card">Você pode me encontrar nas redes sociais ou me enviar um e-mail.</div>
-    <div class="card">Email: rafaelrec72@gmail.com.      Instagram: @rch_rafa</div>
+    <div class="contato-cards">
+      <div class="card contato-card">
+        <p>Email</p>
+        <p class="contato-info">rafaelrec72@gmail.com</p>
+      </div>
+      <div class="card contato-card">
+        <p>Instagram</p>
+        <a class="instagram-button" href="https://www.instagram.com/rch_rafa" target="_blank" rel="noopener noreferrer">@rch_rafa</a>
+      </div>
+    </div>
   </div>
 </section>
 
